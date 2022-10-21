@@ -7,6 +7,12 @@ public class Bus extends Transport{
     }
 
     @Override
+    public void refill() {
+        System.out.println("Еду на заправку");
+        System.out.println("Заправляю автобус бензином");
+    }
+
+    @Override
     public String toString() {
         return "Bus: " +
                         " марка - " + getBrand() +

@@ -150,6 +150,13 @@ public class Car extends Transport{
         this.insurance = insurance;
     }
 
+    @Override
+    public void refill() {
+        System.out.println("Еду на заправку");
+        System.out.println("Заправляю машину бензином");
+
+    }
+
     public static class Key {
         private final boolean remoteRunEngine;
         private final boolean withoutKeyAccess;

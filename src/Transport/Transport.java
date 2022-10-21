@@ -1,6 +1,6 @@
 package Transport;
 
-public class Transport {
+public abstract class Transport {
     private final String brand;
     private final String model;
     private final int manufacturingYear;
@@ -67,6 +67,8 @@ public class Transport {
     public void setMaximalSpeed(int maximalSpeed) {
         this.maximalSpeed = Math.max(maximalSpeed, 0);
     }
+
+    public abstract void refill();
 }
 
 

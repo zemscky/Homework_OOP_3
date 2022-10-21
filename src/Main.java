@@ -110,5 +110,24 @@ public class Main {
         System.out.println(luaz);
         System.out.println(paz);
         System.out.println(scania);
+
+        System.out.println();
+
+        lada.refill();
+        audi.refill();
+        bMW.refill();
+        kia.refill();
+        hyundai.refill();
+
+        System.out.println();
+
+        martin.refill();
+        leningrad.refill();
+
+        System.out.println();
+
+        luaz.refill();
+        paz.refill();
+        scania.refill();
     }
 }

@@ -78,4 +78,10 @@ public class Train extends Transport{
                 ", numberOfWagons=" + numberOfWagons
                 ;
     }
+
+    @Override
+    public void refill() {
+        System.out.println("Еду ДЕПО");
+        System.out.println("Заправляю поезд дизелем");
+    }
 }
