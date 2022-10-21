@@ -75,7 +75,7 @@ public class Train extends Transport{
                 ", время поездки - " + travelTime +
                 ", станция отбытия - " + departureStationName +
                 ", конечная станция - " + endingStation +
-                ", количество вагонов - " + numberOfWagons
+                ", numberOfWagons=" + numberOfWagons
                 ;
     }
 }

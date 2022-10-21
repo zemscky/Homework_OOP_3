@@ -1,3 +1,4 @@
+import Transport.Bus;
 import Transport.Car;
 import Transport.Train;
 
@@ -63,7 +64,8 @@ public class Main {
                 "Минск-Пассажирский",
                 11,
                 301
-        ); Train leningrad = new Train(
+        );
+        Train leningrad = new Train(
                 "«Ленинград»",
                 "D-125",
                 2019,
@@ -75,9 +77,38 @@ public class Main {
                 "Ленинград-Пассажирский",
                 8,
                 270
+
         );
 
         System.out.println(martin);
         System.out.println(leningrad);
+
+        System.out.println();
+
+        Bus luaz = new Bus(
+                "ЛуАЗ",
+                "5292",
+                2018,
+                "Россия",
+                "белый",
+                80
+        ); Bus paz = new Bus(
+                "ПАЗ",
+                "3204",
+                2018,
+                "Россия",
+                null,
+                95
+        ); Bus scania = new Bus(
+                "Scania",
+                "Omni",
+                2012,
+                "Швеция",
+                "синий",
+                102
+        );
+        System.out.println(luaz);
+        System.out.println(paz);
+        System.out.println(scania);
     }
 }
