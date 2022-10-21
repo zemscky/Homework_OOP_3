@@ -14,11 +14,20 @@ public class Transport {
                 model,
                 manufacturingYear,
                 manufacturingCountry,
-                "Белый"
+                "Белый",
+                0
         );
     }
-
     public Transport(String brand, String model, int manufacturingYear, String manufacturingCountry, String color) {
+        this.brand = ValidationUtils.validOrDefault(brand, "default");
+        this.model = ValidationUtils.validOrDefault(model, "default");
+        this.manufacturingYear = manufacturingYear >= 0 ? manufacturingYear : 2000;
+        this.manufacturingCountry = ValidationUtils.validOrDefault(manufacturingCountry, "default");
+        setColor(color);
+        setMaximalSpeed(maximalSpeed);
+    }
+
+    public Transport(String brand, String model, int manufacturingYear, String manufacturingCountry, String color,int maximalSpeed) {
         this.brand = ValidationUtils.validOrDefault(brand, "default");
         this.model = ValidationUtils.validOrDefault(model, "default");
         this.manufacturingYear = manufacturingYear >= 0 ? manufacturingYear : 2000;

@@ -33,7 +33,6 @@ public class Car extends Transport{
         this.bodyType = ValidationUtils.validOrDefault(bodyType, "седан");
         this.placesCount = Math.max(placesCount, 1);
         setEngineVolume(engineVolume);
-        setColor(color);
         setGearBox(gearBox);
         setRegNumber(regNumber);
         setWinterTires(winterTires);
@@ -55,8 +54,8 @@ public class Car extends Transport{
                 manufacturingYear,
                 manufacturingCountry,
                 "МКПП",
-                "х000хх000",
                 "седан",
+                "х000хх000",
                 5,
                 true,
                 new Key(),
@@ -221,16 +220,16 @@ public class Car extends Transport{
     @Override
     public String toString() {
         return "Car: " +
-                " brand - " + getBrand() +
-                ", model - " + getModel() +
-                ", engineVolume - " + getEngineVolume() +
-                ", color - " + getColor() +
-                ", manufacturingYear - " + getManufacturingYear() +
-                ", manufacturingCountry - " + getManufacturingCountry() +
-                ", gearBox - " + getGearBox() +
-                ", bodyType - " + getBodyType() +
-                ", regNumber - " + getRegNumber() +
-                ", placesCount - " + getPlacesCount() +
+                " марка - " + getBrand() +
+                ", модель - " + getModel() +
+                ", объем двигателя - " + getEngineVolume() + " л.с." +
+                ", цвет кузова - " + getColor() +
+                ", год производства - " + getManufacturingYear() +
+                ", страна производства - " + getManufacturingCountry() +
+                ", коробка переключения передач - " + getGearBox() +
+                ", регистрационный номер - " + getRegNumber() +
+                ", тип кузова - " + getBodyType() +
+                ", количество мест - " + getPlacesCount() +
                 ", " + (isWinterTires() ? "зимняя" : "летняя") + " резина" +
                 ", " + (getKey().isWithoutKeyAccess() ? "безключевой доступ" : "ключевой доступ" ) +
                 ", " + (getKey().isRemoteRunEngine() ? "удаленный запуск" : "обычный запуск" ) +
