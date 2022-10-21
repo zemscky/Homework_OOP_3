@@ -129,5 +129,6 @@ public class Main {
         luaz.refill();
         paz.refill();
         scania.refill();
+
     }
 }
