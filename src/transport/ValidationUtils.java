@@ -1,4 +1,4 @@
-package Animals;
+package transport;
 
 public class ValidationUtils {
     public static String validOrDefault (String value, String defaultValue) {

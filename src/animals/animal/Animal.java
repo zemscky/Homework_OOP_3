@@ -1,12 +1,12 @@
-package Animals;
+package animals.animal;
 
 import java.util.Objects;
 
-public abstract class Animals {
-    private final String nickname; // кличка
+public abstract class Animal {
+    private String nickname; // кличка
     private int numberOfYears; // возраст
 
-    public Animals(
+    public Animal(
             String nickname,
             int numberOfYears
     ) {
@@ -18,7 +18,7 @@ public abstract class Animals {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Animals animals = (Animals) o;
+        Animal animals = (Animal) o;
         return numberOfYears == animals.numberOfYears && Objects.equals(nickname, animals.nickname);
     }
 
@@ -30,20 +30,27 @@ public abstract class Animals {
     public String getNickname() {
         return nickname;
     }
+    public void  setNickname() {this.nickname = nickname; }
 
     public int getNumberOfYears() {
         return numberOfYears;
     }
 
     public void setNumberOfYears(int numberOfYears) {
-        this.numberOfYears = Math.max(numberOfYears, 1);
+        this.numberOfYears = numberOfYears;
     }
 
-    public abstract void eat();
+    public void eat(){
+        System.out.printf("%s ест\n", this.nickname);
+    }
 
-    public abstract void sleep();
+    public  void sleep(){
+        System.out.printf("%s спит\n", this.nickname);
+    }
 
-    public abstract void go();
+    public  void go() {
+        System.out.printf("%s перемещается\n", this.nickname);
+    }
 
 
 }

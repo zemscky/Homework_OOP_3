@@ -1,62 +1,76 @@
-package Animals;
+package animals;
+
+import animals.animal.*;
 
 public class Main {
     public static void main(String[] args) {
-        Herbivores gazelle = new Herbivores(
+        Herbivore gazelle = new Herbivore(
                 "Gazelle",
                 3,
                 "полупустыни",
-                50,
+                20,
                 "различными травами и иными растениями"
-        );Herbivores giraffe = new Herbivores(
+        );
+        Herbivore giraffe = new Herbivore(
                 "Giraffe",
                 3,
                 "полупустыни",
-                55,
+                15,
                 "различными травами и иными растениями"
-        );Herbivores horse = new Herbivores(
+        );
+        Herbivore horse = new Herbivore(
                 "Horse",
                 10,
                 "степи",
-                50,
+                18,
                 "различными травами и иными растениями"
         );
+        gazelle.eat();
+        gazelle.go();
+        gazelle.sleep();
+        gazelle.walk();
 
-
-        Predators hyena = new Predators(
+        Predator hyena = new Predator(
                 "Hyena",
                 7,
                 null,
-                30,
+                20,
                 null
         );
-        Predators tiger = new Predators(
+        Predator tiger = new Predator(
                 "Tiger",
                 4,
                 null,
-                35,
+                25,
                 null
         );
-        Predators bear = new Predators(
+        Predator bear = new Predator(
                 "Bear",
                 8,
                 null,
-                35,
+                15,
                 null
         );
+        hyena.eat();
+        hyena.go();
+        hyena.sleep();
+        hyena.walk();
+        hyena.hunt();
 
-
-
-        Amphibians frog = new Amphibians(
+        Amphibian frog = new Amphibian(
                 "Frog",
                 6,
                 null
         );
-        Amphibians alreadyFreshwater = new Amphibians(
+        Amphibian alreadyFreshwater = new Amphibian(
                 "Already",
                 9,
                 null
         );
+        frog.eat();
+        frog.go();
+        frog.sleep();
+        frog.hunt();
 
         Flightless peacock = new Flightless(
                 "Peacock",
@@ -74,6 +88,11 @@ public class Main {
                 null,
                 null
         );
+
+        peacock.eat();
+        peacock.go();
+        peacock.sleep();
+        peacock.walk();
 
         Flying gull = new Flying(
                 "Gull",
@@ -93,5 +112,9 @@ public class Main {
                 null,
                 null
         );
+        gull.eat();
+        gull.go();
+        gull.sleep();
+        gull.fly();
     }
 }

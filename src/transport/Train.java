@@ -1,4 +1,4 @@
-package Transport;
+package transport;
 
 public class Train extends Transport{
     private double tripPrice; // цена
@@ -17,10 +17,11 @@ public class Train extends Transport{
                  String departureStationName,
                  String endingStation,
                  int numberOfWagons,
-                 int maximalSpeed
+                 int maximalSpeed,
+                 String fuelType
     ) {
 
-        super(brand, model, manufacturingYear, manufacturingCountry, color, maximalSpeed);
+        super(brand, model, manufacturingYear, manufacturingCountry, color, maximalSpeed, fuelType);
         setTripPrice(tripPrice);
         setTravelTime(travelTime);
         setDepartureStationName(departureStationName);
@@ -33,7 +34,7 @@ public class Train extends Transport{
     }
 
     public void setTripPrice(double tripPrice) {
-        this.tripPrice = Math.max(tripPrice, 0);
+        this.tripPrice = Math.max(tripPrice, 1);
     }
 
     public int getTravelTime() {
@@ -41,7 +42,7 @@ public class Train extends Transport{
     }
 
     public void setTravelTime(int travelTime) {
-        this.travelTime = Math.max(travelTime, 0);
+        this.travelTime = Math.max(travelTime, 1);
     }
 
     public String getDepartureStationName() {
@@ -71,17 +72,29 @@ public class Train extends Transport{
     @Override
     public String toString() {
         return "Train: " +
-                "Цена поездки - " + tripPrice + " рублей " +
+                "transport = " + super.toString() +
+                ", Цена поездки - " + tripPrice + " рублей " +
                 ", время поездки - " + travelTime +
                 ", станция отбытия - " + departureStationName +
                 ", конечная станция - " + endingStation +
-                ", numberOfWagons=" + numberOfWagons
+                ", количество вагонов - " + numberOfWagons
                 ;
     }
 
     @Override
     public void refill() {
-        System.out.println("Еду ДЕПО");
-        System.out.println("Заправляю поезд дизелем");
+        System.out.println("Refilling train with " + this.fuelType);
+
     }
+
+    @Override
+    protected String checkFuelTypeOrDefault(String fuelType) {
+        if (fuelType == null || "Diesel".contains(fuelType)) {
+            return "Diesel";
+        }else {
+            return fuelType;
+        }
+    }
+
+
 }

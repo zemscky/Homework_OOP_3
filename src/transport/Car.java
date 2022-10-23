@@ -1,4 +1,4 @@
-package Transport;
+package transport;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -20,6 +20,8 @@ public class Car extends Transport{
             String color,
             int manufacturingYear,
             String manufacturingCountry,
+            int maximalSpeed,
+            String fuelType,
             String gearBox,
             String bodyType,
             String regNumber,
@@ -28,7 +30,7 @@ public class Car extends Transport{
             Key key,
             Insurance insurance) {
 
-        super(brand, model, manufacturingYear, manufacturingCountry, color);
+        super(brand, model, manufacturingYear, manufacturingCountry, color, maximalSpeed, fuelType);
 
         this.bodyType = ValidationUtils.validOrDefault(bodyType, "седан");
         this.placesCount = Math.max(placesCount, 1);
@@ -45,7 +47,8 @@ public class Car extends Transport{
                float engineVolume,
                String color,
                int manufacturingYear,
-               String manufacturingCountry) {
+               String manufacturingCountry,
+               int maximalSpeed) {
         this(
                 brand,
                 model,
@@ -53,6 +56,8 @@ public class Car extends Transport{
                 color,
                 manufacturingYear,
                 manufacturingCountry,
+                1,
+                "Gasoline",
                 "МКПП",
                 "седан",
                 "х000хх000",
@@ -61,6 +66,15 @@ public class Car extends Transport{
                 new Key(),
                 new Insurance()
         );
+    }
+
+    @Override
+    protected String checkFuelTypeOrDefault(String fuelType) {
+       if (fuelType == null || "Gasoline Diesel Electricity".contains(fuelType)) {
+           return "Gasoline";
+       }else {
+           return fuelType;
+       }
     }
 
     public void setSeasonTires() {
@@ -152,9 +166,7 @@ public class Car extends Transport{
 
     @Override
     public void refill() {
-        System.out.println("Еду на заправку");
-        System.out.println("Заправляю машину бензином");
-
+        System.out.println("Refilling car with " + this.fuelType);
     }
 
     public static class Key {

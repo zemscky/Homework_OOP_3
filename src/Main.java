@@ -1,6 +1,6 @@
-import Transport.Bus;
-import Transport.Car;
-import Transport.Train;
+import transport.Bus;
+import transport.Car;
+import transport.Train;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,7 +10,8 @@ public class Main {
                 1.7f,
                 "Желтый",
                 2015,
-                "Россия"
+                "Россия",
+                120
         );
         Car audi = new Car(
                 "Audi",
@@ -18,7 +19,8 @@ public class Main {
                 3.0f,
                 "Черный",
                 2020,
-                "Германия"
+                "Германия",
+                250
         );
         Car bMW = new Car(
                 "BMW",
@@ -26,7 +28,8 @@ public class Main {
                 3.0f,
                 "Черный",
                 2021,
-                "Германия"
+                "Германия",
+                300
         );
         Car kia = new Car(
                 "Kia",
@@ -34,7 +37,8 @@ public class Main {
                 2.4f,
                 "Красный",
                 2018,
-                "Южная Корея"
+                "Южная Корея",
+                180
         );
         Car hyundai = new Car(
                 "Hyundai",
@@ -42,7 +46,8 @@ public class Main {
                 1.6f,
                 "Оранжевый",
                 2016,
-                "Южная Корея"
+                "Южная Корея",
+                200
         );
         System.out.println(lada);
         System.out.println(audi);
@@ -63,7 +68,8 @@ public class Main {
                 "Белорусский вокзал",
                 "Минск-Пассажирский",
                 11,
-                301
+                301,
+                null
         );
         Train leningrad = new Train(
                 "«Ленинград»",
@@ -76,7 +82,8 @@ public class Main {
                 "Ленинградский вокзал",
                 "Ленинград-Пассажирский",
                 8,
-                270
+                270,
+                null
 
         );
 
@@ -91,21 +98,24 @@ public class Main {
                 2018,
                 "Россия",
                 "белый",
-                80
+                80,
+                null
         ); Bus paz = new Bus(
                 "ПАЗ",
                 "3204",
                 2018,
                 "Россия",
                 null,
-                95
+                95,
+                null
         ); Bus scania = new Bus(
                 "Scania",
                 "Omni",
                 2012,
                 "Швеция",
                 "синий",
-                102
+                102,
+                null
         );
         System.out.println(luaz);
         System.out.println(paz);
