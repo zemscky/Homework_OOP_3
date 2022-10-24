@@ -4,9 +4,32 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Car  extends Transport implements Competing {
 
-    public Car(String brand,
-                  String model,
-                  float engineVolume) {
+    public enum BodyType {
+        SEDAN ("Седан"),
+        HATCHBACK ("Хетчбэк"),
+        COUPE ("Купе"),
+        STATION_WAGON ("Универсал"),
+        SUV ("Внедорожник"),
+        CROSSOVER ("Кроссовер"),
+        PICKUP ("Пикап"),
+        VAN ("Фургон"),
+        MINIVAN ("Минивэн");
+
+        private final String bodyType;
+        BodyType(String bodyType) {
+            this.bodyType = bodyType;
+        }
+
+        public String getBodyType() {
+            return bodyType;
+        }
+    }
+    public Car(
+            String brand,
+            String model,
+            float engineVolume,
+            BodyType bodyType
+            ) {
         super(brand, model, engineVolume);
     }
 
