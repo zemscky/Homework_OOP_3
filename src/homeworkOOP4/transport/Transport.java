@@ -30,4 +30,6 @@ public abstract class Transport {
     public float getEngineVolume() {
         return engineVolume;
     }
+
+    public abstract void printType();
 }

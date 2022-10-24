@@ -46,6 +46,15 @@ public class Bus extends Transport implements Competing{
                 this.getModel());
     }
 
+    public void printType() {
+        if (capacityType == null) {
+            System.out.println("Данных по грузоподъемности нет");
+        } else {
+            System.out.printf("У автобуса %s %s вместимость от %s до %s\n",
+                    this.getBreand(),this.getModel(),this.capacityType.getFrom(),this.capacityType.getTo());
+        }
+    }
+
     @Override
     public int getBestLapTime() {
         return ThreadLocalRandom.current().nextInt(1, 1000);

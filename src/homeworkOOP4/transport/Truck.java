@@ -47,6 +47,17 @@ public class Truck extends Transport implements Competing{
                 this.getModel());
     }
 
+    public void printType() {
+        if (loadType == null) {
+            System.out.println("Данных по грузоподъемности нет");
+        } else {
+            String from = loadType.getFrom() == null ? "" : "от " + loadType.getFrom();
+            String to = loadType.getTo() == null ? "" : "до " + loadType.getTo();
+            System.out.printf("У грузовой машины %s %s грузоподъемность от %s до %s\n",
+                    this.getBreand(),this.getModel(),this.loadType.getFrom(),this.loadType.getTo());
+        }
+    }
+
     @Override
     public int getBestLapTime() {
         return ThreadLocalRandom.current().nextInt(1, 1000);

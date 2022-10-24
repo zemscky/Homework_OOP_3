@@ -1,19 +1,26 @@
 package homeworkOOP4;
 
 public enum CapacityType {
-    ESPECIALLY_SMALL ("до 10 мест"),
-    SMALL ("до 25 мест"),
-    AVERAGE ("40–50 мест"),
-    BIG ("60–80 мест"),
-    ESPECIALLY_BIG ("100–120 мест");
+    ESPECIALLY_SMALL (0,10),
+    SMALL (10,25),
+    AVERAGE (40,50),
+    BIG (60,80),
+    ESPECIALLY_BIG (100,120);
 
-    private final String capacityType;
-    CapacityType(String capacityType) {
-        this.capacityType = capacityType;
+    private final int from;
+    private final int to;
+
+    CapacityType(int from, int to) {
+        this.from = from;
+        this.to = to;
     }
 
-    public String getCapacityType() {
-        return capacityType;
+    public int getFrom() {
+        return from;
+    }
+
+    public int getTo() {
+        return to;
     }
 }
 

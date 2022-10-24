@@ -39,6 +39,14 @@ public class Car  extends Transport implements Competing {
                 this.getModel());
     }
 
+    @Override
+    public void printType() {
+        if (bodyType == null) {
+            System.out.println("Данных по типу кузова нет");
+        } else {
+            System.out.printf("У машины %s %s тип кузова - %s\n", this.getBreand(),this.getModel(),this.bodyType);
+        }
+    }
 
     @Override
     public void pitStop() {

@@ -58,4 +58,7 @@ public abstract class Driver <T extends Transport> {
                 this.car.getBreand(),
                 this.car.getModel());
     }
+    public static void printInfo(Driver<?> driver, Transport transport) {
+        transport.printType();
+    }
 }
