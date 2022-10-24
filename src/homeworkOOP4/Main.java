@@ -13,7 +13,7 @@ public class Main {
                 "Audi",
                 "A8",
                 3.0f,
-                Car.BodyType.SEDAN);
+                BodyType.SEDAN);
 
         DriverB driverB = new DriverB(
                 "Driver A",
@@ -25,7 +25,7 @@ public class Main {
                 "KAMAZ",
                 "4911-EXTREME",
                 17.2f,
-                Truck.LoadType.N3);
+                 LoadType.N3);
 
         DriverC driverC = new DriverC(
                 "Driver B",
@@ -37,7 +37,7 @@ public class Main {
                 "Peugeot",
                 "806",
                 2.0f,
-                Bus.CapacityType.ESPECIALLY_SMALL);
+                 CapacityType.ESPECIALLY_SMALL);
 
         DriverD driverD = new DriverD(
                 "Driver C",

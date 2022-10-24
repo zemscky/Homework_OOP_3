@@ -1,24 +1,12 @@
 package homeworkOOP4.transport;
 
+import homeworkOOP4.CapacityType;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Bus extends Transport implements Competing{
-    public enum CapacityType {
-        ESPECIALLY_SMALL ("до 10 мест"),
-        SMALL ("до 25 мест"),
-        AVERAGE ("40–50 мест"),
-        BIG ("60–80 мест"),
-        ESPECIALLY_BIG ("100–120 мест");
 
-        private final String capacityType;
-        CapacityType(String capacityType) {
-            this.capacityType = capacityType;
-        }
-
-        public String getCapacityType() {
-            return capacityType;
-        }
-    }
+    private  CapacityType capacityType;
     public Bus(
             String brand,
             String model,
@@ -26,6 +14,15 @@ public class Bus extends Transport implements Competing{
             CapacityType capacityType
     ) {
         super(brand, model, engineVolume);
+        this.capacityType = capacityType;
+    }
+
+    public CapacityType getCapacityType() {
+        return capacityType;
+    }
+
+    public void setCapacityType(CapacityType capacityType) {
+        this.capacityType = capacityType;
     }
 
     @Override

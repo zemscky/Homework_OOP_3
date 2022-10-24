@@ -1,23 +1,12 @@
 package homeworkOOP4.transport;
 
+import homeworkOOP4.LoadType;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Truck extends Transport implements Competing{
 
-    public enum LoadType {
-        N1 ("с полной массой до 3,5 тонн"),
-        N2 ("с полной массой свыше 3,5 до 12 тонн"),
-        N3 ("с полной массой свыше 12 тонн");
-
-        private final String loadType;
-        LoadType(String loadType) {
-            this.loadType = loadType;
-        }
-
-        public String getLoadType() {
-            return loadType;
-        }
-    }
+    private LoadType loadType;
 
     public Truck(
             String brand,
@@ -26,6 +15,15 @@ public class Truck extends Transport implements Competing{
             LoadType loadType
     ) {
         super(brand, model, engineVolume);
+        this.loadType = loadType;
+    }
+
+    public LoadType getLoadType() {
+        return loadType;
+    }
+
+    public void setLoadType(LoadType loadType) {
+        this.loadType = loadType;
     }
 
     @Override
