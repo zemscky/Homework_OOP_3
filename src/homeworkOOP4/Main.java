@@ -36,7 +36,8 @@ public class Main {
         Bus bus = new Bus(
                 "Peugeot",
                 "806",
-                2.0f);
+                2.0f,
+                Bus.CapacityType.ESPECIALLY_SMALL);
 
         DriverD driverD = new DriverD(
                 "Driver C",

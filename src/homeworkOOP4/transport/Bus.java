@@ -22,7 +22,8 @@ public class Bus extends Transport implements Competing{
     public Bus(
             String brand,
             String model,
-            float engineVolume
+            float engineVolume,
+            CapacityType capacityType
     ) {
         super(brand, model, engineVolume);
     }
