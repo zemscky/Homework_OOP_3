@@ -50,15 +50,14 @@ public abstract class Driver <T extends Transport> {
         return drivingExperience;
     }
 
-    @Override
-    public String toString() {
-        return String.format("Водитель %s управляет автомобилем %s %s" +
-                        " и будет участвовать в заезде",
-                this.fullName,
-                this.car.getBrand(),
-                this.car.getModel());
-    }
     public static void printInfo(Driver<?> driver, Transport transport) {
         transport.printType();
+    }
+
+    @Override
+    public String toString() {
+        return fullName + ", стаж водителя: " + drivingExperience + " лет, категория прав: "
+                + category;
+
     }
 }

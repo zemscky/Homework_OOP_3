@@ -41,11 +41,12 @@ public class Truck extends Transport implements Competing{
     }
 
     @Override
-    public void passDiagnostics() {
+    public boolean passDiagnostics() {
         if (ThreadLocalRandom.current().nextBoolean()) {
             throw new  DiagnosticsException(
                     "Грузовая машина " + getBrand() + " " + getModel() + " не прошел диагностику");
         }
+        return false;
     }
 
     @Override
@@ -64,6 +65,11 @@ public class Truck extends Transport implements Competing{
             System.out.printf("У грузовой машины %s %s грузоподъемность от %s до %s\n",
                     this.getBrand(),this.getModel(),this.loadType.getLoadFrom(),this.loadType.getLoadTo());
         }
+    }
+
+    @Override
+    public void repair() {
+        System.out.println("Грузовая машина " + getBrand() + " " + getModel() + " починена");
     }
 
     @Override

@@ -40,11 +40,16 @@ public class Car  extends Transport implements Competing {
     }
 
     @Override
-    public void passDiagnostics() {
+    public boolean passDiagnostics() {
         if (ThreadLocalRandom.current().nextBoolean()) {
             throw new  DiagnosticsException(
                     "Машина " + getBrand() + " " + getModel() + " не прошла диагностику");
         }
+        return false;
+    }
+    @Override
+    public void repair() {
+        System.out.println("Машина " + getBrand() + " " + getModel() + " починена");
     }
 
     @Override

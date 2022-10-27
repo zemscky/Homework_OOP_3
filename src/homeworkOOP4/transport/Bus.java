@@ -40,9 +40,10 @@ public class Bus extends Transport implements Competing{
     }
 
     @Override
-    public void passDiagnostics() {
+    public boolean passDiagnostics() {
         System.out.println(
                 "Автобус " + getBrand() + " " + getModel() + " в диагностике не нуждается");
+        return false;
     }
 
     @Override
@@ -59,6 +60,11 @@ public class Bus extends Transport implements Competing{
             System.out.printf("У автобуса %s %s вместимость от %s до %s мест\n",
                     this.getBrand(),this.getModel(),this.capacityType.getCapacityFrom(),this.capacityType.getCapacityTo());
         }
+    }
+
+    @Override
+    public void repair() {
+        System.out.println("Автобус " + getBrand() + " " + getModel() + " починен");
     }
 
     @Override
