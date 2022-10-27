@@ -17,6 +17,7 @@ public enum BodyType {
     }
 
     public String getBodyType() {
-        return bodyType;
+        return "Тип кузова - " + this.bodyType;
+
     }
 }

@@ -1,9 +1,8 @@
 package transport;
-
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Car extends Transport{
+public class Car extends Transport {
     private float engineVolume;
     private String gearBox;
     private final String bodyType;

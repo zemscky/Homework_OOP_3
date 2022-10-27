@@ -3,22 +3,22 @@ package homeworkOOP4;
 public enum LoadType {
     N1 (0D,3.5),
     N2 (3.5,12D),
-    N3 (12D, null);
+    N3 (12D, Double.MAX_VALUE);
 
-    private final Double from;
-    private final Double to;
+    private final Double loadFrom;
+    private final Double loadTo;
 
     LoadType(Double from, Double to) {
-        this.from = from;
-        this.to = to;
+        this.loadFrom = from;
+        this.loadTo = to;
     }
 
-    public Double getFrom() {
-        return from;
+    public Double getLoadFrom() {
+        return loadFrom;
     }
 
-    public Double getTo() {
-        return to;
+    public Double getLoadTo() {
+        return loadTo;
     }
 }
 

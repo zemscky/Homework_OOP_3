@@ -34,7 +34,7 @@ public abstract class Driver <T extends Transport> {
     public void refill() {
         System.out.printf("Водитель %s заправляет машину %s %s",
                 this.fullName,
-                this.car.getBreand(),
+                this.car.getBrand(),
                 this.car.getModel());
     }
 
@@ -55,7 +55,7 @@ public abstract class Driver <T extends Transport> {
         return String.format("Водитель %s управляет автомобилем %s %s" +
                         " и будет участвовать в заезде",
                 this.fullName,
-                this.car.getBreand(),
+                this.car.getBrand(),
                 this.car.getModel());
     }
     public static void printInfo(Driver<?> driver, Transport transport) {

@@ -3,10 +3,7 @@ package homeworkOOP4;
 import homeworkOOP4.driver.DriverB;
 import homeworkOOP4.driver.DriverC;
 import homeworkOOP4.driver.DriverD;
-import homeworkOOP4.transport.Bus;
-import homeworkOOP4.transport.Car;
-import homeworkOOP4.transport.Transport;
-import homeworkOOP4.transport.Truck;
+import homeworkOOP4.transport.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,7 +11,7 @@ public class Main {
                 "Audi",
                 "A8",
                 3.0f,
-                 BodyType.SEDAN);
+                BodyType.SEDAN);
 
         car.printType();
 
@@ -28,7 +25,7 @@ public class Main {
                 "KAMAZ",
                 "4911-EXTREME",
                 17.2f,
-                 LoadType.N3);
+                LoadType.N3);
 
         truck.printType();
 
@@ -42,7 +39,7 @@ public class Main {
                 "Peugeot",
                 "806",
                 2.0f,
-                 CapacityType.ESPECIALLY_SMALL);
+                CapacityType.ESPECIALLY_SMALL);
 
         bus.printType();
 
@@ -51,7 +48,21 @@ public class Main {
                 5,
                 bus);
         System.out.println(driverD);
-
+        try {
+            car.passDiagnostics();
+        }catch (DiagnosticsException e) {
+            System.out.println("Транспортное средство не прошло диагностику: " + e.getMessage());
+        }
+        try {
+            truck.passDiagnostics();
+        }catch (DiagnosticsException e) {
+            System.out.println("Транспортное средство не прошло диагностику: " + e.getMessage());
+        }
+        try {
+            bus.passDiagnostics();
+        }catch (DiagnosticsException e) {
+            System.out.println("Транспортное средство не прошло диагностику: " + e.getMessage());
+        }
     }
 
 }

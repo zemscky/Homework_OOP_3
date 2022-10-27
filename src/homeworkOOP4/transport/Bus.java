@@ -28,21 +28,27 @@ public class Bus extends Transport implements Competing{
     @Override
     public void startMovement() {
         System.out.printf("Автобус %s %s начал движение",
-                this.getBreand(),
+                this.getBrand(),
                 this.getModel());
     }
 
     @Override
     public void stopMovement() {
         System.out.printf("Автобус %s %s остановился",
-                this.getBreand(),
+                this.getBrand(),
                 this.getModel());
+    }
+
+    @Override
+    public void passDiagnostics() {
+        System.out.println(
+                "Автобус " + getBrand() + " " + getModel() + " в диагностике не нуждается");
     }
 
     @Override
     public void pitStop() {
         System.out.printf("Автобус %s %s совершил пит-стоп",
-                this.getBreand(),
+                this.getBrand(),
                 this.getModel());
     }
 
@@ -50,8 +56,8 @@ public class Bus extends Transport implements Competing{
         if (capacityType == null) {
             System.out.println("Данных по грузоподъемности нет");
         } else {
-            System.out.printf("У автобуса %s %s вместимость от %s до %s\n",
-                    this.getBreand(),this.getModel(),this.capacityType.getFrom(),this.capacityType.getTo());
+            System.out.printf("У автобуса %s %s вместимость от %s до %s мест\n",
+                    this.getBrand(),this.getModel(),this.capacityType.getCapacityFrom(),this.capacityType.getCapacityTo());
         }
     }
 

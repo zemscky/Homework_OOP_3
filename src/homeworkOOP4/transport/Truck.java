@@ -29,21 +29,29 @@ public class Truck extends Transport implements Competing{
     @Override
     public void startMovement() {
         System.out.printf("Грузовая машина %s %s начала движение",
-                this.getBreand(),
+                this.getBrand(),
                 this.getModel());
     }
 
     @Override
     public void stopMovement() {
         System.out.printf("Грузовая машина %s %s остановилась",
-                this.getBreand(),
+                this.getBrand(),
                 this.getModel());
+    }
+
+    @Override
+    public void passDiagnostics() {
+        if (ThreadLocalRandom.current().nextBoolean()) {
+            throw new  DiagnosticsException(
+                    "Грузовая машина " + getBrand() + " " + getModel() + " не прошел диагностику");
+        }
     }
 
     @Override
     public void pitStop() {
         System.out.printf("Грузовая машина %s %s совершила пит-стоп",
-                this.getBreand(),
+                this.getBrand(),
                 this.getModel());
     }
 
@@ -51,10 +59,10 @@ public class Truck extends Transport implements Competing{
         if (loadType == null) {
             System.out.println("Данных по грузоподъемности нет");
         } else {
-            String from = loadType.getFrom() == null ? "" : "от " + loadType.getFrom();
-            String to = loadType.getTo() == null ? "" : "до " + loadType.getTo();
+            String from = loadType.getLoadFrom() == null ? "" : "от " + loadType.getLoadFrom();
+            String to = loadType.getLoadTo() == null ? "" : "до " + loadType.getLoadTo();
             System.out.printf("У грузовой машины %s %s грузоподъемность от %s до %s\n",
-                    this.getBreand(),this.getModel(),this.loadType.getFrom(),this.loadType.getTo());
+                    this.getBrand(),this.getModel(),this.loadType.getLoadFrom(),this.loadType.getLoadTo());
         }
     }
 
