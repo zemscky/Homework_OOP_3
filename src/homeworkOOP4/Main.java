@@ -5,6 +5,7 @@ import homeworkOOP4.driver.DriverB;
 import homeworkOOP4.driver.DriverC;
 import homeworkOOP4.driver.DriverD;
 import homeworkOOP4.mechanic.Mechanic;
+import homeworkOOP4.serviceStation.ServiceStation;
 import homeworkOOP4.sponsor.Sponsor;
 import homeworkOOP4.transport.*;
 
@@ -79,11 +80,18 @@ public class Main {
         peugeot.addMechanic(orlov);
         peugeot.addSponsor(xbet);
 
+
 //        DriverD driverD = new DriverD(
 //                "Driver C",
 //                5,
 //                peugeot);
 //        System.out.println(driverD);
+
+        ServiceStation serviceStation = new ServiceStation();
+        serviceStation.addCar(audi);
+        serviceStation.addTruck(kamaz);
+        serviceStation.service();
+        serviceStation.service();
 
         List<Transport> transports = List.of(audi,kamaz,peugeot);
         for (Transport transport:transports) {

@@ -31,7 +31,7 @@ public class Mechanic <T extends Transport> {
 
     @Override
     public String toString() {
-        return fullName + ", из компании" + company;
+        return fullName + ", из компании " + company;
     }
 }
 
