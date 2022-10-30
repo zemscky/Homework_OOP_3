@@ -7,6 +7,7 @@ import homeworkOOP4.sponsor.Sponsor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public abstract class Transport {
     private final String brand;
@@ -70,5 +71,18 @@ public abstract class Transport {
 
     public List<Sponsor> getSponsors() {
         return sponsors;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transport transport = (Transport) o;
+        return Objects.equals(brand, transport.brand) && Objects.equals(model, transport.model);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model);
     }
 }

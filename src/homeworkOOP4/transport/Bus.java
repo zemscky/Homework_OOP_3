@@ -77,4 +77,5 @@ public class Bus extends Transport implements Competing{
         return ThreadLocalRandom.current().nextInt(1, 150);
     }
 
+
 }
