@@ -12,7 +12,7 @@ public class Car  extends Transport implements Competing {
             String model,
             float engineVolume,
             BodyType bodyType
-            ) {
+    ) {
         super(brand, model, engineVolume);
         this.bodyType = bodyType;
     }
@@ -28,15 +28,28 @@ public class Car  extends Transport implements Competing {
     @Override
     public void startMovement() {
         System.out.printf("Машина %s %s начала движение",
-                this.getBreand(),
+                this.getBrand(),
                 this.getModel());
     }
 
     @Override
     public void stopMovement() {
         System.out.printf("Машина  %s %s остановилась",
-                this.getBreand(),
+                this.getBrand(),
                 this.getModel());
+    }
+
+    @Override
+    public boolean passDiagnostics() {
+        if (ThreadLocalRandom.current().nextBoolean()) {
+            throw new  DiagnosticsException(
+                    "Машина " + getBrand() + " " + getModel() + " не прошла диагностику");
+        }
+        return false;
+    }
+    @Override
+    public void repair() {
+        System.out.println("Машина " + getBrand() + " " + getModel() + " починена");
     }
 
     @Override
@@ -44,14 +57,14 @@ public class Car  extends Transport implements Competing {
         if (bodyType == null) {
             System.out.println("Данных по типу кузова нет");
         } else {
-            System.out.printf("У машины %s %s тип кузова - %s\n", this.getBreand(),this.getModel(),this.bodyType);
+            System.out.printf("У машины %s %s тип кузова - %s\n", this.getBrand(),this.getModel(),this.bodyType);
         }
     }
 
     @Override
     public void pitStop() {
         System.out.printf("Машина %s %s совершила пит-стоп",
-                this.getBreand(),
+                this.getBrand(),
                 this.getModel());
     }
 

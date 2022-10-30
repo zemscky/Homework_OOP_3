@@ -61,6 +61,7 @@ public abstract class Transport {
 
     protected abstract String checkFuelTypeOrDefault(String fuelType);
 
+
     @Override
     public String toString() {
         return "Transport :" +

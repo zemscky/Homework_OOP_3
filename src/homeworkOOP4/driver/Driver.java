@@ -2,6 +2,8 @@ package homeworkOOP4.driver;
 
 import homeworkOOP4.transport.Transport;
 
+import java.util.Objects;
+
 public abstract class Driver <T extends Transport> {
 
     private final String fullName;
@@ -34,7 +36,7 @@ public abstract class Driver <T extends Transport> {
     public void refill() {
         System.out.printf("Водитель %s заправляет машину %s %s",
                 this.fullName,
-                this.car.getBreand(),
+                this.car.getBrand(),
                 this.car.getModel());
     }
 
@@ -50,15 +52,27 @@ public abstract class Driver <T extends Transport> {
         return drivingExperience;
     }
 
-    @Override
-    public String toString() {
-        return String.format("Водитель %s управляет автомобилем %s %s" +
-                        " и будет участвовать в заезде",
-                this.fullName,
-                this.car.getBreand(),
-                this.car.getModel());
-    }
     public static void printInfo(Driver<?> driver, Transport transport) {
         transport.printType();
+    }
+
+    @Override
+    public String toString() {
+        return fullName + ", стаж водителя: " + drivingExperience + " лет, категория прав: "
+                + category;
+
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver<?> driver = (Driver<?>) o;
+        return Objects.equals(fullName, driver.fullName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fullName);
     }
 }
